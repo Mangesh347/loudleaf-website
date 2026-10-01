@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Checkout · Loudleaf Pro</title>
+    <meta name="description" content="Upgrade to Loudleaf Pro. Pay with PayPal or card. Tax is shown before you pay." />
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/m3.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/checkout.css" />
+  </head>
+  <body class="checkout-body">
+    <a class="skip-link" href="#main">Skip to checkout</a>
+    <div class="co-bg" aria-hidden="true">
+      <span class="orb o1"></span>
+      <div class="waves">
+        <svg class="wave-layer slow" viewBox="0 0 1600 180" preserveAspectRatio="none"><path class="w-a" d="M0 60 C200 10 200 110 400 60 S600 10 800 60 S1000 110 1200 60 S1400 10 1600 60 V180 H0Z" /></svg>
+        <svg class="wave-layer" viewBox="0 0 1600 180" preserveAspectRatio="none"><path class="w-b" d="M0 95 C200 140 200 50 400 95 S600 140 800 95 S1000 50 1200 95 S1400 140 1600 95 V180 H0Z" /></svg>
+      </div>
+    </div>
+
+    <main id="main" class="co-shell">
+      <div class="co-card" id="coCard" aria-busy="true">
+        <!-- ============ Left: what you're buying ============ -->
+        <section class="co-summary" aria-labelledby="coProduct">
+          <a class="co-home" href="index.html">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M12.5 4.5 7 10l5.5 5.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            Loudleaf
+          </a>
+
+          <div class="co-brand">
+            <img src="assets/logo.png" alt="" width="48" height="48" />
+            <div>
+              <h1 id="coProduct">Loudleaf Pro</h1>
+              <p>Listen at up to 3.5×, with reader view and your own pronunciations.</p>
+            </div>
+          </div>
+
+          <p class="co-total" aria-live="polite">
+            <span class="co-total-amount" id="coTotal"><span class="skeleton" style="display:inline-block;width:140px;height:48px"></span></span>
+            <span class="co-total-per" id="coPer"></span>
+          </p>
+
+          <p class="co-mode" id="coMode" hidden></p>
+
+          <div class="co-controls">
+            <div class="seg co-pills" role="radiogroup" aria-label="Plan length">
+              <button type="button" role="radio" aria-checked="false" data-term="monthly">Monthly</button>
+              <button type="button" role="radio" aria-checked="true" data-term="yearly">Yearly</button>
+              <button type="button" role="radio" aria-checked="false" data-term="lifetime">Lifetime</button>
+            </div>
+            <div class="seg" role="radiogroup" aria-label="Currency" id="coCurrency"></div>
+          </div>
+
+          <article class="co-item">
+            <div class="co-item-head">
+              <span class="co-item-name" id="coItemName">Loudleaf Pro · Yearly</span>
+              <span class="co-item-price" id="coItemPrice"></span>
+            </div>
+            <p class="co-item-desc">Up to 3.5× speed, reader view with low-vision type and a reading ruler, a pronunciation dictionary, smart cleanup of citations and links, and a year of listening stats.</p>
+            <p class="co-item-tip" id="coTip"></p>
+          </article>
+
+          <dl class="co-lines">
+            <div><dt>Subtotal</dt><dd id="coSubtotal">—</dd></div>
+            <div><dt id="coTaxLabel">Tax</dt><dd id="coTax">—</dd></div>
+            <div class="co-due"><dt>Total due today</dt><dd id="coDue">—</dd></div>
+          </dl>
+          <p class="co-fine" id="coFine">Pro turns on the moment your payment is confirmed. Nothing renews automatically.</p>
+        </section>
+
+        <!-- ============ Right: how to pay ============ -->
+        <section class="co-pay" aria-labelledby="coPayTitle">
+          <!-- Signed out -->
+          <div class="co-step" id="stepSignin" hidden>
+            <h2 id="coPayTitle">Sign in to upgrade</h2>
+            <p class="co-lede">Your plan is saved to your Google account, so Loudleaf Pro follows you to every computer where you use Chrome.</p>
+            <a class="co-google" id="googleBtn" href="/api/auth/login">
+              <svg viewBox="0 0 18 18" aria-hidden="true"><path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84a4.14 4.14 0 0 1-1.8 2.72v2.26h2.92c1.7-1.57 2.68-3.88 2.68-6.62z" /><path fill="#34A853" d="M9 18c2.43 0 4.47-.8 5.96-2.18l-2.92-2.26c-.8.54-1.84.86-3.04.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.33A9 9 0 0 0 9 18z" /><path fill="#FBBC05" d="M3.97 10.72A5.4 5.4 0 0 1 3.68 9c0-.6.1-1.18.29-1.72V4.95H.96A9 9 0 0 0 0 9c0 1.45.35 2.83.96 4.05l3.01-2.33z" /><path fill="#EA4335" d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 .96 4.95l3.01 2.33C4.68 5.16 6.66 3.58 9 3.58z" /></svg>
+              Continue with Google
+            </a>
+            <p class="co-note">We only use your name and email. No password to remember.</p>
+          </div>
+
+          <!-- Signed in: choose how to pay -->
+          <div class="co-step" id="stepPay" hidden>
+            <div class="co-account" id="coAccount">
+              <img id="coAvatar" alt="" width="36" height="36" referrerpolicy="no-referrer" hidden />
+              <div>
+                <span class="co-account-name" id="coName"></span>
+                <span class="co-account-plan" id="coPlanNow"></span>
+              </div>
+              <button type="button" class="btn btn-text" id="signOutBtn">Sign out</button>
+            </div>
+
+            <h2>How would you like to pay?</h2>
+
+            <button type="button" class="co-paypal" id="paypalBtn" hidden>
+              <span class="co-btn-label"><b>Pay</b><i>Pal</i></span>
+              <span class="co-btn-sub" id="paypalSub"></span>
+            </button>
+
+            <div class="co-divider" id="coDivider" hidden><span>or pay by card</span></div>
+
+            <div class="co-rzp-block" id="rzpBlock" hidden>
+              <div class="field">
+                <label for="billingEmail">Billing email</label>
+                <input class="input" id="billingEmail" type="email" autocomplete="email" inputmode="email" spellcheck="false" />
+              </div>
+              <button type="button" class="co-razorpay" id="razorpayBtn">
+                <span class="co-btn-label">
+                  <svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.5" y="4.5" width="15" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.6" /><path d="M2.5 8h15" stroke="currentColor" stroke-width="1.6" /></svg>
+                  Pay by card
+                </span>
+                <span class="co-btn-sub" id="rzpSub">Visa · Mastercard · Amex · secured by Razorpay</span>
+              </button>
+              <button type="button" hidden id="razorpayQuick"></button>
+            </div>
+
+            <p class="co-unavailable" id="noProviders" hidden>Checkout is opening soon. Write to <a href="mailto:support@fenwicklabs.app">support@fenwicklabs.app</a> and we'll set you up.</p>
+            <p class="co-error" id="coError" role="alert" hidden></p>
+          </div>
+
+          <!-- Working -->
+          <div class="co-step co-center" id="stepWorking" hidden>
+            <svg class="wavy-progress co-wavy" viewBox="0 0 240 12" preserveAspectRatio="none" aria-hidden="true"><path d="M0 6 Q6 0 12 6 T24 6 T36 6 T48 6 T60 6 T72 6 T84 6 T96 6 T108 6 T120 6 T132 6 T144 6 T156 6 T168 6 T180 6 T192 6 T204 6 T216 6 T228 6 T240 6" fill="none" stroke="var(--primary)" stroke-width="3" stroke-linecap="round" stroke-dasharray="12 12" /></svg>
+            <h2 id="workingTitle">Confirming your payment…</h2>
+            <p class="co-lede" id="workingText">This takes a few seconds. Please keep this page open.</p>
+          </div>
+
+          <!-- Done -->
+          <div class="co-step co-center" id="stepDone" hidden>
+            <div class="co-done-orb" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m6 12.5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <h2>You're on Loudleaf Pro.</h2>
+            <p class="co-lede" id="doneText"></p>
+            <p class="co-note" id="doneSync">Loudleaf updates on its own within a few seconds. Every Pro feature is unlocked.</p>
+            <a class="btn btn-filled" href="index.html">Done</a>
+          </div>
+
+          <footer class="co-foot">
+            <p class="co-legal">By paying you agree to the <a href="terms.html">Terms</a> · <a href="privacy.html">Privacy</a> · <a href="refund.html">Refunds</a></p>
+          </footer>
+        </section>
+      </div>
+    </main>
+
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

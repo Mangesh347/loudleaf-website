@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Loudleaf: Read Aloud & Text to Speech for Chrome, with Word Highlighting</title>
+    <meta name="description" content="Listen to any article in Chrome with natural voices and word-by-word highlighting. Up to 3.5× speed, a calm reader view, and no account needed. Free to start." />
+    <link rel="canonical" href="https://loudleaf-fenwick.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Loudleaf: the web, read to you" />
+    <meta property="og:description" content="Text to speech for Chrome with word-by-word highlighting, up to 3.5× speed, and a calm reader view." />
+    <meta property="og:url" content="https://loudleaf-fenwick.vercel.app/" />
+    <meta property="og:image" content="https://loudleaf-fenwick.vercel.app/assets/og-image.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#2f6b2a" />
+    <link rel="icon" href="assets/favicon.png" />
+    <link rel="preload" href="fonts/atkinson-700.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/tokens.css" />
+    <link rel="stylesheet" href="css/m3.css" />
+    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/loudleaf.css" />
+  </head>
+  <body class="ll">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap">
+        <a class="brand" href="/"><img src="assets/logo.png" alt="" width="32" height="32" />Loudleaf</a>
+        <nav class="nav" aria-label="Main"><a href="#listen">Features</a><a href="#lab">Speed lab</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></nav>
+        <a class="btn btn-filled" data-install href="#">Add to Chrome</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Hero: the page reads itself -->
+      <section class="ll-hero">
+        <span class="hero-blob" aria-hidden="true"></span>
+        <div class="wrap">
+          <div>
+            <p class="kick"><i aria-hidden="true"></i>Text to speech for Chrome</p>
+            <h1 data-say data-title="Introduction">The web, <span class="soft">read to you.</span></h1>
+            <p class="read-lede" data-say data-title="Introduction">Loudleaf reads any article out loud in a natural voice and lights up every word as it goes. Press play, and this page will show you.</p>
+          </div>
+          <aside class="hero-side">
+            <div class="listen-card">
+              <p>Hear it before you install it</p>
+              <button class="hear-btn" type="button" id="hear" aria-label="Read this page aloud">
+                <span class="disc"><svg viewBox="0 0 24 24" aria-hidden="true" id="hear-ic"><path fill="currentColor" d="M8 5v14l11-7z" /></svg></span>
+                <span id="hear-label">Read this page to me</span>
+              </button>
+            </div>
+            <div class="install-row">
+              <a class="btn btn-filled btn-lg" data-install href="#">Add to Chrome, it's free</a>
+            </div>
+            <p class="trust-line">★★★★★ From Fenwick Labs · 6 five-star Chrome extensions · 2,000+ installs</p>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Playlist of features -->
+      <section class="playlist wrap" id="listen" aria-labelledby="pl-title">
+        <div class="playlist-head">
+          <h2 id="pl-title">Six things Loudleaf does</h2>
+          <p>Press any track to hear it.</p>
+        </div>
+        <ol class="tracks" id="tracks">
+          <li class="track" data-track>
+            <button class="track-play" type="button" aria-label="Play: Every word, lit up"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z" /></svg></button>
+            <div><h3 data-say data-title="Every word, lit up">Every word, lit up</h3>
+              <p class="say" data-say data-title="Every word, lit up">Your eyes and ears stay together. The sentence you're on glows softly, and the word being spoken lights up in amber, so you never lose your place, even when you look away for a moment.</p></div>
+            <span class="dur"></span>
+          </li>
+          <li class="track" data-track>
+            <button class="track-play" type="button" aria-label="Play: Faster than you read"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z" /></svg></button>
+            <div><h3 data-say data-title="Faster than you read">Faster than you read</h3>
+              <p class="say" data-say data-title="Faster than you read">Most people read about two hundred and fifty words a minute. With a little practice, you can listen at twice that. Loudleaf goes up to three and a half times normal speed, and your ears adjust faster than you'd expect.</p>
+              <div class="extra"><span>0.5× – 3.5×</span><span>Changes instantly</span><span>Remembers your speed</span></div></div>
+            <span class="dur"></span>
+          </li>
+          <li class="track" data-track>
+            <button class="track-play" type="button" aria-label="Play: Only the article"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z" /></svg></button>
+            <div><h3 data-say data-title="Only the article">Only the article</h3>
+              <p class="say" data-say data-title="Only the article">Loudleaf finds the story and skips the menus, the ads, and the comment section. With Pro, it also skips citation marks and reads web addresses as simply "link".</p></div>
+            <span class="dur"></span>
+          </li>
+          <li class="track" data-track>
+            <button class="track-play" type="button" aria-label="Play: A calmer page"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z" /></svg></button>
+            <div><h3 data-say data-title="A calmer page">A calmer page</h3>
+              <p class="say" data-say data-title="A calmer page">Reader view turns any cluttered page into clean, large text in a typeface designed for readers with low vision. Choose paper, night, or high contrast, and add a reading ruler that follows your pointer.</p>
+              <div class="extra"><span>Atkinson Hyperlegible</span><span>Paper · Night · High contrast</span><span>Reading ruler</span></div></div>
+            <span class="dur"></span>
+          </li>
+          <li class="track" data-track>
+            <button class="track-play" type="button" aria-label="Play: Say it right"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z" /></svg></button>
+            <div><h3 data-say data-title="Say it right">Say it right</h3>
+              <p class="say" data-say data-title="Say it right">Teach Loudleaf the names and jargon from your world. Tell it once that S Q L is "sequel", and it will say it that way everywhere, forever.</p></div>
+            <span class="dur"></span>
+          </li>
+          <li class="track" data-track>
+            <button class="track-play" type="button" aria-label="Play: Private, and yours"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z" /></svg></button>
+            <div><h3 data-say data-title="Private, and yours">Private, and yours</h3>
+              <p class="say" data-say data-title="Private, and yours">Loudleaf uses the voices built into Chrome and your computer. What you listen to is never sent to us, there's no account to create, and it only touches a page when you press play.</p></div>
+            <span class="dur"></span>
+          </li>
+        </ol>
+      </section>
+
+      <!-- Speed lab -->
+      <section class="wrap" id="lab" aria-labelledby="lab-title">
+        <div class="lab">
+          <h2 id="lab-title">Speed lab</h2>
+          <p>How fast can you listen? Drag the dial, press play, and find your speed. Most people are comfortable at 1.5× on day one and 2× within a week.</p>
+          <div class="lab-grid">
+            <p class="lab-text" id="lab-text">Listening is a skill, and it grows quickly. The first time, double speed sounds like a rush of words. A few days later, normal speed feels slow, and you are finishing articles on your commute that used to wait in an open tab for weeks.</p>
+            <div class="speedo">
+              <div class="x" id="lab-x">1.5×</div>
+              <div class="wpm" id="lab-wpm">≈ 270 words a minute</div>
+              <input type="range" id="lab-rate" min="0.75" max="3" step="0.25" value="1.5" aria-label="Speed" />
+              <div class="marks" aria-hidden="true"><span>0.75×</span><span>1.5×</span><span>2.25×</span><span>3×</span></div>
+              <button class="btn btn-filled btn-lg" type="button" id="lab-play">Play at this speed</button>
+              <p class="lock-note">Free plays up to 1.5×. Pro goes to 3.5×.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- For whom -->
+      <section class="wrap" aria-labelledby="who-title">
+        <div class="playlist-head"><h2 id="who-title">Made for how you read</h2></div>
+        <div class="modes">
+          <article class="mode"><i aria-hidden="true"></i><h3>Students</h3><p>Get through the reading list on a walk. Follow along with highlighting when you need to focus.</p></article>
+          <article class="mode"><i aria-hidden="true"></i><h3>ADHD &amp; dyslexia</h3><p>Hearing and seeing each word together keeps your place. Reader view removes the noise.</p></article>
+          <article class="mode"><i aria-hidden="true"></i><h3>Language learners</h3><p>Hear real pronunciation on real articles, at a speed you choose, in dozens of languages.</p></article>
+          <article class="mode"><i aria-hidden="true"></i><h3>Busy professionals</h3><p>Turn reports, docs, and long emails into something you can listen to while you do the next thing.</p></article>
+        </div>
+      </section>
+
+      <!-- Pricing -->
+      <section class="band band-alt" id="pricing" aria-labelledby="pr-title">
+        <div class="wrap">
+          <div class="sec-head"><span class="kicker">Pricing</span><h2 id="pr-title">Free to listen. Pro to fly.</h2><p>Nothing renews automatically.</p></div>
+          <div class="ll-pricing">
+            <article class="ll-plan"><h3>Free</h3><div class="amt">$0</div><ul><li>Unlimited listening</li><li>Every Chrome voice</li><li>Word-by-word highlighting</li><li>Up to 1.5× speed</li><li>7 days of listening stats</li></ul><a class="btn btn-tonal" data-install href="#">Add to Chrome</a></article>
+            <article class="ll-plan best"><span class="badge badge-pro" id="save-flag" style="align-self:flex-start">Save 35%</span><h3>Pro · Yearly</h3><div class="amt"><span data-price="yearly">$39</span><span class="per"> / year</span></div><p style="margin:0;opacity:.8">or <span data-price="monthly">$4.99</span> a month</p><ul><li>Up to 3.5× speed</li><li>Reader view with low-vision type</li><li>Pronunciation dictionary</li><li>Smart cleanup of citations &amp; links</li><li>A year of stats</li></ul><a class="btn btn-filled" href="checkout.html?term=yearly">Get Pro yearly</a></article>
+            <article class="ll-plan"><h3>Pro · Lifetime</h3><div class="amt"><span data-price="lifetime">$79</span><span class="per"> once</span></div><ul><li>Everything in Pro</li><li>Every future update</li><li>No renewals, ever</li></ul><a class="btn btn-tonal" href="checkout.html?term=lifetime">Get lifetime</a></article>
+          </div>
+          <p class="field-hint" style="text-align:center;margin-top:24px">Prices in USD before tax; your currency and tax show at checkout. Pay with PayPal or card. 14-day refund. <a href="pricing.html">Compare plans</a></p>
+        </div>
+      </section>
+
+      <section class="band" id="faq" aria-labelledby="faq-title">
+        <div class="wrap">
+          <div class="sec-head"><h2 id="faq-title">Questions</h2></div>
+          <div class="faq">
+            <details><summary>Which voices does it use?</summary><p>The voices that come with Chrome and your computer, including Google's and Microsoft's natural online voices when available. They cost nothing extra and new ones arrive with system updates.</p></details>
+            <details><summary>Does it work on PDFs and Google Docs?</summary><p>Not yet. Chrome's PDF viewer and Google Docs draw their own text, so extensions can't read them. Select text on any normal page and press Alt+Shift+S to read just that part.</p></details>
+            <details><summary>Is my reading private?</summary><p>Yes. Loudleaf runs only on the page where you press play, and the text is spoken by your browser. We never receive it. Listening stats stay on your computer.</p></details>
+            <details><summary>Do I need an account?</summary><p>No. You only sign in with Google if you buy Pro, so your plan follows you to other computers.</p></details>
+            <details><summary>What happens when Pro ends?</summary><p>Nothing renews automatically. Loudleaf goes back to Free: unlimited listening up to 1.5×.</p></details>
+            <details><summary>Refunds?</summary><p>Email us within 14 days and we'll refund you in full. <a href="refund.html">Refund policy</a></p></details>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap">
+        <span>© <span id="year">2026</span> Fenwick Labs · Loudleaf</span>
+        <nav aria-label="Legal and support"><a href="pricing.html">Pricing</a><a href="support.html">Support</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a><a href="refund.html">Refund Policy</a><a href="mailto:support@fenwicklabs.app">support@fenwicklabs.app</a></nav>
+      </div>
+    </footer>
+
+    <!-- Now-playing dock -->
+    <div class="dock" id="dock" role="region" aria-label="Page reader">
+      <span class="progress" aria-hidden="true"><i id="dock-progress"></i></span>
+      <span class="viz" aria-hidden="true"><span class="bars"><i></i><i></i><i></i><i></i></span></span>
+      <span class="now"><b id="dock-title">Introduction</b><span id="dock-sub">Press play to hear this page</span></span>
+      <button class="speed" type="button" id="dock-speed" aria-label="Change speed">1×</button>
+      <button class="pp" type="button" id="dock-play" aria-label="Play"><svg viewBox="0 0 24 24" aria-hidden="true" id="dock-ic"><path fill="currentColor" d="M8 5v14l11-7z" /></svg></button>
+      <a class="btn btn-tonal" data-install href="#">Get Loudleaf</a>
+    </div>
+
+    <script src="js/text.js"></script>
+    <script src="js/site.js"></script>
+  </body>
+</html>
