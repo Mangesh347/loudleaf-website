@@ -13,6 +13,8 @@ img,
 svg {
   max-width: 100%;
 }
+/* Wave layers are 200% wide and slide by half their width to loop; never cap them. */
+svg.wave-layer { max-width: none; }
 .wrap {
   width: min(1200px, 100% - 32px);
   margin: 0 auto;
